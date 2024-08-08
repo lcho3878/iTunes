@@ -14,6 +14,7 @@
 		5434890B2C64800400CD877D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5434890A2C64800400CD877D /* Assets.xcassets */; };
 		5434890E2C64800400CD877D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5434890D2C64800400CD877D /* Base */; };
 		543489192C64847A00CD877D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 543489182C64847A00CD877D /* .gitignore */; };
+		5434891B2C64849900CD877D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434891A2C64849900CD877D /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5434890D2C64800400CD877D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5434890F2C64800400CD877D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		543489182C64847A00CD877D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5434891A2C64849900CD877D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				5434890A2C64800400CD877D /* Assets.xcassets */,
 				5434890C2C64800400CD877D /* LaunchScreen.storyboard */,
 				5434890F2C64800400CD877D /* Info.plist */,
+				5434891A2C64849900CD877D /* APIKey.swift */,
 			);
 			path = iTunes;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				543489062C64800300CD877D /* ViewController.swift in Sources */,
 				543489022C64800300CD877D /* AppDelegate.swift in Sources */,
+				5434891B2C64849900CD877D /* APIKey.swift in Sources */,
 				543489042C64800300CD877D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
