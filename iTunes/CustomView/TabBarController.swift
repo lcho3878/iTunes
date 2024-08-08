@@ -11,11 +11,12 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let searchVC = ViewController()
-        searchVC.title = "서치"
-        let aVC = ViewController()
-        aVC.title = "임시"
-        setViewControllers([searchVC, aVC], animated: true)
+        let searchVC = SearchViewController()
+//        searchVC.title = "검색"0
+        let searchNaVC = UINavigationController(rootViewController: searchVC)
+        searchNaVC.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 0)
+        
+        setViewControllers([searchNaVC], animated: true)
     }
     
 }
