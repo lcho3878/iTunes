@@ -18,6 +18,9 @@
 		543489202C6484EC00CD877D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434891F2C6484EC00CD877D /* SearchViewController.swift */; };
 		543489232C65D99900CD877D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489222C65D99900CD877D /* SearchTableViewCell.swift */; };
 		5434892B2C65DA1500CD877D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5434892A2C65DA1500CD877D /* SnapKit */; };
+		5434892E2C65E3E200CD877D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5434892D2C65E3E200CD877D /* RxCocoa */; };
+		543489302C65E3E200CD877D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5434892F2C65E3E200CD877D /* RxSwift */; };
+		543489322C6607EA00CD877D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489312C6607EA00CD877D /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,7 @@
 		5434891D2C6484CC00CD877D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5434891F2C6484EC00CD877D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		543489222C65D99900CD877D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		543489312C6607EA00CD877D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543489302C65E3E200CD877D /* RxSwift in Frameworks */,
+				5434892E2C65E3E200CD877D /* RxCocoa in Frameworks */,
 				5434892B2C65DA1500CD877D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5434891F2C6484EC00CD877D /* SearchViewController.swift */,
+				543489312C6607EA00CD877D /* SearchViewModel.swift */,
 				543489222C65D99900CD877D /* SearchTableViewCell.swift */,
 			);
 			path = SearchView;
@@ -115,6 +122,8 @@
 			name = iTunes;
 			packageProductDependencies = (
 				5434892A2C65DA1500CD877D /* SnapKit */,
+				5434892D2C65E3E200CD877D /* RxCocoa */,
+				5434892F2C65E3E200CD877D /* RxSwift */,
 			);
 			productName = iTunes;
 			productReference = 543488FE2C64800300CD877D /* iTunes.app */;
@@ -146,6 +155,7 @@
 			mainGroup = 543488F52C64800300CD877D;
 			packageReferences = (
 				543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 543488FF2C64800300CD877D /* Products */;
 			projectDirPath = "";
@@ -176,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				543489202C6484EC00CD877D /* SearchViewController.swift in Sources */,
+				543489322C6607EA00CD877D /* SearchViewModel.swift in Sources */,
 				543489022C64800300CD877D /* AppDelegate.swift in Sources */,
 				5434891B2C64849900CD877D /* APIKey.swift in Sources */,
 				543489232C65D99900CD877D /* SearchTableViewCell.swift in Sources */,
@@ -421,6 +432,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -428,6 +447,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5434892D2C65E3E200CD877D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5434892F2C65E3E200CD877D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

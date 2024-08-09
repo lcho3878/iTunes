@@ -7,30 +7,45 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class SearchViewController: UIViewController {
     
     private lazy var searchController = {
         let view = UISearchController(searchResultsController: nil)
         view.searchBar.placeholder = "게임, 앱, 스토리 등"
-        view.searchResultsUpdater = self
         return view
     }()
     
     private lazy var searchTableView = {
         let view = UITableView()
-        view.delegate = self
-        view.dataSource = self
         view.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         view.rowHeight = 120
         return view
     }()
+    
+    private let viewModel = SearchViewModel()
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configureHierarchy()
         configureLayout()
+        bind()
+    
+    }
+    private func bind() {
+        let input = SearchViewModel.Input(searchText: searchController.searchBar.rx.text.orEmpty, searchButtonTap: searchController.searchBar.rx.searchButtonClicked)
+        let output = viewModel.transform(input: input)
+        
+        output.dataList
+            .bind(to: searchTableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType:  SearchTableViewCell.self)) { row, element, cell in
+                cell.appNameLabel.text = element
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureView() {
@@ -53,23 +68,4 @@ final class SearchViewController: UIViewController {
     
 }
 
-extension SearchViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        print(text)
-    }
-    
-}
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-        return cell
-    }
-    
-}
