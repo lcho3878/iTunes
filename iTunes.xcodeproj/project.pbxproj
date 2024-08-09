@@ -16,6 +16,8 @@
 		5434891B2C64849900CD877D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434891A2C64849900CD877D /* APIKey.swift */; };
 		5434891E2C6484CC00CD877D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434891D2C6484CC00CD877D /* TabBarController.swift */; };
 		543489202C6484EC00CD877D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5434891F2C6484EC00CD877D /* SearchViewController.swift */; };
+		543489232C65D99900CD877D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489222C65D99900CD877D /* SearchTableViewCell.swift */; };
+		5434892B2C65DA1500CD877D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5434892A2C65DA1500CD877D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		5434891A2C64849900CD877D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5434891D2C6484CC00CD877D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5434891F2C6484EC00CD877D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		543489222C65D99900CD877D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5434892B2C65DA1500CD877D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +70,7 @@
 				5434891C2C6484AF00CD877D /* CustomView */,
 				543489012C64800300CD877D /* AppDelegate.swift */,
 				543489032C64800300CD877D /* SceneDelegate.swift */,
-				5434891F2C6484EC00CD877D /* SearchViewController.swift */,
+				543489212C65D98900CD877D /* SearchView */,
 				543489072C64800300CD877D /* Main.storyboard */,
 				5434890A2C64800400CD877D /* Assets.xcassets */,
 				5434890C2C64800400CD877D /* LaunchScreen.storyboard */,
@@ -82,6 +86,15 @@
 				5434891D2C6484CC00CD877D /* TabBarController.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		543489212C65D98900CD877D /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5434891F2C6484EC00CD877D /* SearchViewController.swift */,
+				543489222C65D99900CD877D /* SearchTableViewCell.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +113,9 @@
 			dependencies = (
 			);
 			name = iTunes;
+			packageProductDependencies = (
+				5434892A2C65DA1500CD877D /* SnapKit */,
+			);
 			productName = iTunes;
 			productReference = 543488FE2C64800300CD877D /* iTunes.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 543488F52C64800300CD877D;
+			packageReferences = (
+				543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 543488FF2C64800300CD877D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -159,6 +178,7 @@
 				543489202C6484EC00CD877D /* SearchViewController.swift in Sources */,
 				543489022C64800300CD877D /* AppDelegate.swift in Sources */,
 				5434891B2C64849900CD877D /* APIKey.swift in Sources */,
+				543489232C65D99900CD877D /* SearchTableViewCell.swift in Sources */,
 				5434891E2C6484CC00CD877D /* TabBarController.swift in Sources */,
 				543489042C64800300CD877D /* SceneDelegate.swift in Sources */,
 			);
@@ -391,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5434892A2C65DA1500CD877D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 543488F62C64800300CD877D /* Project object */;
 }
