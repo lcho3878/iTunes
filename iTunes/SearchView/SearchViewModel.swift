@@ -20,18 +20,32 @@ final class SearchViewModel {
         let searchButtonTap: ControlEvent<Void>
     }
     struct Output {
-        let dataList: PublishSubject<[String]>
+        let dataList: PublishSubject<[Media]>
     }
     
     func transform(input: Input) -> Output {
-        let dataList = PublishSubject<[String]>()
+        let dataList = PublishSubject<[Media]>()
         input.searchButtonTap
             .withLatestFrom(input.searchText)
-            .bind(with: self) { owner, value in
-                print(value)
-                owner.list.append(value)
-                dataList.onNext(owner.list)
+            .map { "\($0)" }
+            .debug("터치 시작")
+            .flatMap { value in
+                APIManager.shared.callRequest(term: value)
             }
+            .subscribe(with: self, onNext: { owner, result in
+                dataList.onNext(result.results)
+            }, onError: { owner, error in
+                print("Error: \(error)")
+            }, onCompleted: { owner in
+                print("Complete")
+            }, onDisposed: { owner in
+                print("Disposed")
+            })
+//            .bind(with: self) { owner, value in
+//                print(value)
+//                owner.list.append(value)
+//                dataList.onNext(owner.list)
+//            }
             .disposed(by: disposeBag)
         return Output(dataList: dataList)
     }

@@ -43,7 +43,7 @@ final class SearchViewController: UIViewController {
         
         output.dataList
             .bind(to: searchTableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType:  SearchTableViewCell.self)) { row, element, cell in
-                cell.appNameLabel.text = element
+                cell.appNameLabel.text = element.trackName
             }
             .disposed(by: disposeBag)
     }
