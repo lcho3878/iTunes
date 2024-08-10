@@ -23,6 +23,7 @@
 		543489322C6607EA00CD877D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489312C6607EA00CD877D /* SearchViewModel.swift */; };
 		543489352C660B7C00CD877D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489342C660B7C00CD877D /* APIManager.swift */; };
 		543489372C660C9D00CD877D /* MediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543489362C660C9D00CD877D /* MediaResult.swift */; };
+		5434893D2C67878E00CD877D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5434893C2C67878E00CD877D /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5434893D2C67878E00CD877D /* Kingfisher in Frameworks */,
 				543489302C65E3E200CD877D /* RxSwift in Frameworks */,
 				5434892E2C65E3E200CD877D /* RxCocoa in Frameworks */,
 				5434892B2C65DA1500CD877D /* SnapKit in Frameworks */,
@@ -138,6 +140,7 @@
 				5434892A2C65DA1500CD877D /* SnapKit */,
 				5434892D2C65E3E200CD877D /* RxCocoa */,
 				5434892F2C65E3E200CD877D /* RxSwift */,
+				5434893C2C67878E00CD877D /* Kingfisher */,
 			);
 			productName = iTunes;
 			productReference = 543488FE2C64800300CD877D /* iTunes.app */;
@@ -170,6 +173,7 @@
 			packageReferences = (
 				543489292C65DA1500CD877D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				5434893B2C67878E00CD877D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 543488FF2C64800300CD877D /* Products */;
 			projectDirPath = "";
@@ -456,6 +460,14 @@
 				minimumVersion = 6.7.1;
 			};
 		};
+		5434893B2C67878E00CD877D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -473,6 +485,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5434892C2C65E3E200CD877D /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		5434893C2C67878E00CD877D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5434893B2C67878E00CD877D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

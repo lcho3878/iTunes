@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class SearchTableViewCell: UITableViewCell {
     static let identifier = "SearchTableViewCell"
@@ -72,5 +73,10 @@ final class SearchTableViewCell: UITableViewCell {
             $0.height.equalTo(32)
             $0.width.equalTo(72)
         }
+    }
+    
+    func configureData(_ data: Media) {
+        appNameLabel.text = data.trackName
+        appIconImageView.kf.setImage(with: URL(string: data.artworkUrl100))
     }
 }

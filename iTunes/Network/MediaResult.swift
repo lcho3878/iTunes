@@ -15,4 +15,5 @@ struct MediaResult: Decodable {
 struct Media: Decodable {
     let artistName: String
     let trackName: String
+    let artworkUrl100: String
 }
