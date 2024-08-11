@@ -46,6 +46,14 @@ final class SearchViewController: UIViewController {
                 cell.configureData(element)
             }
             .disposed(by: disposeBag)
+        
+        searchTableView.rx.modelSelected(Media.self)
+            .bind(with: self) { owner, media in
+                let detailVC = DetailViewController()
+                detailVC.media = media
+                owner.navigationController?.pushViewController(detailVC, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureView() {

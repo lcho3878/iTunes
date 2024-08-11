@@ -16,7 +16,7 @@ final class APIManager {
     
     func callRequest(term: String) -> Observable<MediaResult> {
 //        let url = "https://itunes.apple.com/search?"
-        let url = "https://itunes.apple.com/search?term=\(term)&country=KR&lang=ko_KR"
+        let url = "https://itunes.apple.com/search?term=\(term)&country=KR&lang=ko_KR&media=movie"
 //        term=%ED%83%9D%EC%8B%9C&country=KR&lang=ko_KR
         let result = Observable<MediaResult>.create { observer in
             let sessionConfig = URLSessionConfiguration.default
@@ -30,6 +30,7 @@ final class APIManager {
             urlRequest.allHTTPHeaderFields = [
                 "User-Agent": "myItunes"
             ]
+
             session.dataTask(with: url) { data, response, error in
                 guard error == nil else {
                     observer.onError(APIError.unknownResponse)
