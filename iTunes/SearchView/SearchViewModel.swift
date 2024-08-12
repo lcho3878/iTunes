@@ -9,7 +9,15 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class SearchViewModel {
+protocol ViewModel {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
+
+final class SearchViewModel: ViewModel {
     
     private let disposeBag = DisposeBag()
     
