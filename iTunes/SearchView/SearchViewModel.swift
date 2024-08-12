@@ -39,6 +39,9 @@ final class SearchViewModel: ViewModel {
             .debug("터치 시작")
             .flatMap { value in
                 APIManager.shared.callRequest(term: value)
+                    .catch { error in
+                        return Single<MediaResult>.never()
+                    }
             }
             .subscribe(with: self, onNext: { owner, result in
                 dataList.onNext(result.results)
